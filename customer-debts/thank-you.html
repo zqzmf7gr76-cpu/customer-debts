@@ -44,7 +44,20 @@
       Αν ο browser εμφανίσει προειδοποίηση, επίλεξε “Διατήρηση”.
     </p>
   </div>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get("session_id");
+
+  const target = sessionId
+    ? `download.html?session_id=${encodeURIComponent(sessionId)}`
+    : "download.html";
+
+  setTimeout(() => {
+    window.location.href = target;
+  }, 1200);
+</script>
 
 </body>
 </html>
+
 
